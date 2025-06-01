@@ -5,8 +5,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'https://project-tempest-hiring.up.railway.app',
-      domainUrl: 'https://d4839b57-6c3a-4818-9f12-fe121e6bf0be-00-1bny6v0j1mbdx.sisko.replit.dev:3002'
+      apiBase: process.env.BE_URL,
+      domainUrl: process.env.DOMAIN_URL
     }
   },
 

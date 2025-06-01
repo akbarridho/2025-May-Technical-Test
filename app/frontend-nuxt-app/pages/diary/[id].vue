@@ -102,15 +102,12 @@ const goBack = () => {
 }
 
 const getCurrentUrl = (item) => {
-  console.log('masuk bos')
   return `${domain_url}/diary/${item.id}`
 }
 
 const getTwitterShareUrl = (item) => {
   const url = encodeURIComponent(getCurrentUrl(item))
-  console.log(url, 'url')
   const text = encodeURIComponent(item.meta?.title || 'Check this out')
-  console.log(`https://twitter.com/intent/tweet?url=${url}&text=${text}`)
   return `https://twitter.com/intent/tweet?url=${url}&text=${text}`
 }
 
