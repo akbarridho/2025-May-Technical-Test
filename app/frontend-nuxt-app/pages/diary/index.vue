@@ -157,11 +157,17 @@ const getWhatsappShareUrl = (item) => {
 }
 
 onMounted(async () => {
+  const bootstrap = await import('bootstrap/dist/js/bootstrap.bundle.min.js');
+  const dropdownElements = document.querySelectorAll('.dropdown-toggle');
+  dropdownElements.forEach((dropdownEl) => {
+    new bootstrap.Dropdown(dropdownEl);
+  });
+
   if (!route.params.id) {
-    await fetchDataNews()
-    window.addEventListener('scroll', handleScroll)
+    await fetchDataNews();
+    window.addEventListener('scroll', handleScroll);
   }
-})
+});
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
